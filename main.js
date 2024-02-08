@@ -37,10 +37,11 @@ for (let i = 0; i < count; i++) {
 }
 
 // Draw all dots
-function drawDot() {
+function renderDots() {
   dotcoords.forEach((dot) => {
     // Draw a dot
     c.beginPath();
+    c.lineWidth = 3;
     c.arc(dot.x, dot.y, 2, 0, Math.PI * 2, false);
     c.stroke();
     c.fill();
@@ -48,30 +49,45 @@ function drawDot() {
 }
 
 // Draw dot at mouse cursor
-function drawMouse() {
+function renderMouse() {
   c.beginPath();
+  c.lineWidth = 3;
   c.arc(mcoord.x, mcoord.y, 2, 0, Math.PI * 2, false);
   c.stroke();
   c.fill();
 }
 
-// Draw line between dots
-function drawLine() {
-  c.beginPath();
-  dotcoords.forEach((dot1) => {
-    c.moveTo(dot1.x, dot1.y);
-    // If dot is close to cursor draw line
-    if (getDistance(mcoord, dot1) < sep * 1.5) {
-      c.lineTo(mcoord.x, mcoord.y);
+// Decide whether or not to draw a line
+function decideDraw(p1, p2) {
+  // TODO: Test if this actually optimises anything or its more efficient to just calculate distance no matter what
+  if (Math.abs(p1.x - p2.x) < sep && Math.abs(p1.y - p2.y) < sep) {
+    const d = getDistance(p1, p2);
+    if (d < sep) {
+      renderLine(p1, p2, d);
     }
+  }
+}
+
+// Draw a line from p1 to p2
+function renderLine(p1, p2, d) {
+  c.beginPath();
+  c.moveTo(p1.x, p1.y);
+  c.lineWidth = 1;
+  c.lineTo(p2.x, p2.y);
+  c.stroke();
+}
+
+// Draw line between dots
+function drawLines() {
+  // TODO: Improve efficiency of drawing lines (dont use nested foreach)
+  dotcoords.forEach((dot1) => {
+    // If dot is close to cursor draw line
+    decideDraw(mcoord, dot1);
     dotcoords.forEach((dot2) => {
       // If dot is close to another dot draw line
-      if (getDistance(dot1, dot2) < sep) {
-        c.lineTo(dot2.x, dot2.y);
-      }
+      decideDraw(dot1, dot2);
     });
   });
-  c.stroke();
 }
 
 function getDistance(p1, p2) {
@@ -83,6 +99,7 @@ function getDistance(p1, p2) {
 // Set new coordinates for all dots
 function update() {
   dotcoords.forEach((dot) => {
+    // Make sure dots dont go off screen
     if (dot.x < 0 || dot.x > canvas.width) {
       dot.nx = -dot.nx;
     }
@@ -95,12 +112,12 @@ function update() {
 }
 
 function animate() {
-  requestAnimationFrame(animate);
   c.clearRect(0, 0, canvas.width, canvas.height);
-  drawMouse();
-  drawDot();
-  drawLine();
+  renderMouse();
+  renderDots();
+  drawLines();
   update();
+  requestAnimationFrame(animate);
 }
 
 animate();
