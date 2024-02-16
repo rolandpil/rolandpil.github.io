@@ -70,6 +70,7 @@ function decideDraw(p1, p2) {
 
 // Draw a line from p1 to p2
 function renderLine(p1, p2, d) {
+  // TODO: Shorten line width the further away the points are
   c.beginPath();
   c.moveTo(p1.x, p1.y);
   c.lineWidth = 1;
