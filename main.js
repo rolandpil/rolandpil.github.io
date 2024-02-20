@@ -1,7 +1,7 @@
 const canvas = document.querySelector("canvas");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = window.innerWidth; //1664
+canvas.height = window.innerHeight; //957
 
 let c = canvas.getContext("2d");
 c.strokeStyle = "white";
@@ -10,7 +10,9 @@ c.fillStyle = "white";
 // List of all dots
 let dotcoords = [];
 // Number of dots
-const count = 400;
+let count = Math.floor((canvas.width * canvas.height) / 3981);
+count = count > 400 ? 400 : count;
+
 // distance for line drawing
 const sep = 55;
 
