@@ -22,3 +22,18 @@ body{
     z-index: 11;
     position: relative;
 }
+.party {
+    transition-duration: 0.4s;
+    z-index: 12;
+    overflow: hidden;
+    position: fixed;
+    bottom: 5px;
+    right:5px;
+    font-size: 25px;
+    background:none;
+    border:none;
+}
+.party:hover{
+    transition-duration: 0.4s;
+    font-size: 35px;
+}

@@ -1,9 +1,17 @@
-const canvas = document.querySelector("canvas");
+// Confetti
+const confetti = document.querySelector(".confetti");
 
-canvas.width = window.innerWidth; //1664
-canvas.height = window.innerHeight; //957
+function doConfetti() {
+  //TODO
+  console.log("wip");
+}
 
-let c = canvas.getContext("2d");
+// Tesselate
+const canvas = document.querySelector(".tesselate");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let c = canvas.getContext("2d", { alpha: "false" });
 c.strokeStyle = "white";
 c.fillStyle = "white";
 
