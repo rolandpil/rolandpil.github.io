@@ -23,23 +23,10 @@ body{
     position: relative;
 }
 #umaring {
+    margin: 0px;
     position: fixed;
     bottom: 0;
     z-index: 13;
     width: 100%;
-}
-.party {
-    transition-duration: 0.4s;
-    z-index: 12;
-    overflow: hidden;
-    position: fixed;
-    bottom: 5px;
-    right:5px;
-    font-size: 25px;
-    background:none;
-    border:none;
-}
-.party:hover{
-    transition-duration: 0.4s;
-    font-size: 35px;
+    text-align: center;
 }
