@@ -32,7 +32,7 @@ let mcoord = {
 
 window.addEventListener("mousemove", (m) => {
   mcoord.x = m.x;
-  mcoord.y = m.y;
+  mcoord.y = m.y - 50;
 });
 
 // Generate coordinates for all dots
