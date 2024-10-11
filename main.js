@@ -1,10 +1,33 @@
 // Confetti
 const confetti = document.querySelector(".confetti");
 
-function doConfetti() {
-  //TODO
-  console.log("wip");
+let dark = true;
+const navbar = document.getElementById("navbar");
+
+function darkModeToggle() {
+  console.log("toggle darkmode");
+  if (dark) {
+    dark = !dark;
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black";
+    c.strokeStyle = "black";
+    c.fillStyle = "black";
+    navbar.style.backgroundColor = "black";
+    document.getElementById("github_svg").src = "/image/github_black.svg";
+    document.getElementById();
+  } else {
+    dark = !dark;
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "white";
+    c.strokeStyle = "white";
+    c.fillStyle = "white";
+    navbar.style.backgroundColor = "white";
+    document.getElementById("github_svg").src = "/image/github_white.svg";
+  }
 }
+
+const darkModeButton = document.getElementById("darkMode");
+darkModeButton.addEventListener("click", () => darkModeToggle());
 
 // Tesselate
 const canvas = document.querySelector(".tesselate");

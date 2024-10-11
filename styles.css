@@ -8,6 +8,51 @@ body{
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+nav {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px;
+}
+  
+nav button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+nav button:hover {
+    background-color: #0056b3;
+}
+
+#darkMode {
+    transition-duration: 0.4s;
+    z-index: 12;
+    overflow: hidden;
+    position: fixed;
+    padding: 2px ;
+    bottom: 10px;
+    right:10px;
+    font-size: 25px;
+    background:transparent;
+    border-radius: 5px;
+    border:none;
+}
+
+#darkMode:hover{
+    transition-duration: 0.4s;
+    font-size: 35px;
+}
+
+
 .container{
     z-index: 2;
     width: 60%;

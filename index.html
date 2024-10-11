@@ -4,42 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roland Pilenyi</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="styles.css" />
     <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <nav id="navbar">
+      <button id="home">Home</button>
+      <button id="about">About</button>
     </nav>
     <div class="container">
       Roland Pilenyi
       <div class="svg-holder">
         <div id="svg1">
           <a href="https://www.github.com/rolandpil">
-            <img src="image/github.svg" />
+            <img id="github_svg" src="image/github_white.svg" />
           </a>
         </div>
       </div>
     </div>
     <canvas class="tesselate"></canvas>
+    <button id="darkMode">🌑</button>
     <script src="main.js"></script>
     <script
       id="umaring_js"
