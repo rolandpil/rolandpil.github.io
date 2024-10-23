@@ -26,6 +26,10 @@ function darkModeToggle() {
   }
 }
 
+function showAlert() {
+  alert("Work in progress.");
+}
+
 const darkModeButton = document.getElementById("darkMode");
 darkModeButton.addEventListener("click", () => darkModeToggle());
 
